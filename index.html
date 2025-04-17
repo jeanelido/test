@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul du Delta</title>
+    <script>
+        function calculateDelta() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                alert('Veuillez entrer des valeurs valides pour a, b et c.');
+                return;
+            }
+
+            const delta = (b * b) - (4 * a * c);
+            document.getElementById('result').textContent = `Delta: ${delta}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcul du Delta</h1>
+    <form onsubmit="event.preventDefault(); calculateDelta();">
+        <label for="a">a:</label>
+        <input type="number" id="a" name="a" required>
+        <br><br>
+        <label for="b">b:</label>
+        <input type="number" id="b" name="b" required>
+        <br><br>
+        <label for="c">c:</label>
+        <input type="number" id="c" name="c" required>
+        <br><br>
+        <button type="submit">Calculer Delta</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>
